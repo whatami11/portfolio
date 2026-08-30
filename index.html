@@ -1,0 +1,1917 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vivek Kumar Pal | Portfolio</title>
+
+    <style>
+        /* =========================
+           RESET & GLOBAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080b12;
+            color: #f5f7fa;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 100px 8%;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           BACKGROUND
+        ========================== */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(0, 220, 255, 0.08),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(140, 70, 255, 0.08),
+                    transparent 30%
+                ),
+                #080b12;
+        }
+
+        .grid {
+            position: absolute;
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 50px 50px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent
+                );
+        }
+
+        .orb {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.15;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        .orb.one {
+            background: #00d9ff;
+            top: 10%;
+            left: -100px;
+        }
+
+        .orb.two {
+            background: #8c4dff;
+            right: -100px;
+            top: 50%;
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(80px, -60px);
+            }
+
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+
+            backdrop-filter: blur(15px);
+
+            background:
+                rgba(8, 11, 18, 0.65);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.05);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #00d9ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #aeb6c4;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #00d9ff;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        #home {
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .hero {
+            max-width: 850px;
+        }
+
+        .hero-small {
+            color: #00d9ff;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 7rem);
+            line-height: 0.95;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: transparent;
+            -webkit-text-stroke: 1px #00d9ff;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #aeb6c4;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 25px;
+            border-radius: 8px;
+            border: 1px solid #00d9ff;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .btn.primary {
+            background: #00d9ff;
+            color: #05080d;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow:
+                0 10px 30px rgba(0,217,255,0.2);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: #596273;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%, 100% {
+                transform: translate(-50%, 0);
+            }
+
+            50% {
+                transform: translate(-50%, 10px);
+            }
+
+        }
+
+
+        /* =========================
+           SECTION HEADERS
+        ========================== */
+
+        .section-label {
+            color: #00d9ff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            margin-bottom: 50px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #aeb6c4;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .about-box {
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            padding: 35px;
+            border-radius: 15px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            transition: 0.4s;
+        }
+
+        .about-box:hover {
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(0,217,255,0.4);
+        }
+
+        .about-box h3 {
+            margin-bottom: 20px;
+            color: #00d9ff;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+
+            padding: 12px 0;
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.06);
+        }
+
+        .info:last-child {
+            border-bottom: none;
+        }
+
+        .info span:first-child {
+            color: #70798a;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .skill {
+            padding: 25px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            border:
+                1px solid rgba(255,255,255,0.07);
+
+            border-radius: 12px;
+        }
+
+        .skill-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .skill-top span:last-child {
+            color: #00d9ff;
+        }
+
+        .bar {
+            height: 5px;
+            background: #1a202b;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            width: 0;
+            height: 100%;
+            background: #00d9ff;
+            transition: width 1.5s ease;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .project {
+            position: relative;
+            overflow: hidden;
+
+            padding: 35px;
+            min-height: 350px;
+
+            border-radius: 18px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.05),
+                    rgba(255,255,255,0.015)
+                );
+
+            transition: 0.5s;
+        }
+
+        .project::before {
+            content: "";
+
+            position: absolute;
+
+            width: 200px;
+            height: 200px;
+
+            background: #00d9ff;
+
+            filter: blur(100px);
+
+            opacity: 0;
+
+            top: -100px;
+            right: -100px;
+
+            transition: 0.5s;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+
+            border-color:
+                rgba(0,217,255,0.4);
+        }
+
+        .project:hover::before {
+            opacity: 0.15;
+        }
+
+        .project-number {
+            color: #596273;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+        }
+
+        .project h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            color: #929baa;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 7px 12px;
+
+            font-size: 0.75rem;
+
+            border-radius: 20px;
+
+            background:
+                rgba(0,217,255,0.08);
+
+            color: #00d9ff;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: #00d9ff;
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================
+           CERTIFICATIONS
+        ========================== */
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .certification {
+            display: flex;
+            gap: 25px;
+
+            padding: 30px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            border-radius: 15px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            transition: 0.4s ease;
+        }
+
+        .certification:hover {
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(0,217,255,0.4);
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .cert-icon {
+            min-width: 50px;
+            height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background:
+                rgba(0,217,255,0.08);
+
+            color: #00d9ff;
+
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .cert-content {
+            flex: 1;
+        }
+
+        .cert-date {
+            color: #00d9ff;
+
+            font-size: 0.75rem;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 8px;
+        }
+
+        .certification h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .certification p {
+            color: #929baa;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .cert-description {
+            display: block;
+
+            color: #687181;
+
+            font-size: 0.85rem;
+
+            line-height: 1.6;
+
+            margin-bottom: 18px;
+        }
+
+        .cert-link {
+            color: #00d9ff;
+            font-size: 0.85rem;
+
+            transition: 0.3s;
+        }
+
+        .cert-link:hover {
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+           TIMELINE / EDUCATION
+        ========================== */
+
+        .timeline {
+            max-width: 850px;
+
+            border-left:
+                1px solid rgba(255,255,255,0.1);
+
+            padding-left: 40px;
+
+            margin-left: 20px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+
+            width: 11px;
+            height: 11px;
+
+            border-radius: 50%;
+
+            background: #00d9ff;
+
+            left: -46px;
+            top: 7px;
+
+            box-shadow:
+                0 0 15px #00d9ff;
+        }
+
+        .timeline-date {
+            color: #00d9ff;
+
+            font-size: 0.85rem;
+
+            margin-bottom: 10px;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item p {
+            color: #929baa;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-container {
+            max-width: 800px;
+        }
+
+        .contact-container > p {
+            color: #929baa;
+
+            line-height: 1.8;
+
+            margin-bottom: 40px;
+        }
+
+        .contact-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .contact-card {
+            padding: 25px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+
+            border-color: #00d9ff;
+        }
+
+        .contact-card small {
+            display: block;
+
+            color: #687181;
+
+            margin-bottom: 8px;
+        }
+
+        .contact-card span {
+            color: #00d9ff;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 30px 8%;
+
+            text-align: center;
+
+            border-top:
+                1px solid rgba(255,255,255,0.05);
+
+            color: #596273;
+
+            font-size: 0.85rem;
+        }
+
+
+        /* =========================
+           SCROLL REVEAL
+        ========================== */
+
+        .reveal {
+            opacity: 0;
+
+            transform:
+                translateY(40px);
+
+            transition:
+                0.8s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =========================
+           CURSOR GLOW
+        ========================== */
+
+        .cursor-glow {
+            position: fixed;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0,217,255,0.08),
+                    transparent 70%
+                );
+
+            transform:
+                translate(-50%, -50%);
+
+            z-index: -1;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            section {
+                padding: 90px 6%;
+            }
+
+            .nav-links {
+                position: absolute;
+
+                top: 70px;
+                left: 0;
+
+                width: 100%;
+
+                padding: 25px;
+
+                background:
+                    rgba(8,11,18,0.95);
+
+                flex-direction: column;
+
+                text-align: center;
+
+                display: none;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .about-grid,
+            .projects-grid,
+            .skills-grid,
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .timeline {
+                margin-left: 10px;
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+    <div class="background">
+
+        <div class="grid"></div>
+
+        <div class="orb one"></div>
+
+        <div class="orb two"></div>
+
+    </div>
+
+    <div class="cursor-glow"></div>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header>
+
+        <nav>
+
+            <a href="#home" class="logo">
+                Vivek<span> Kumar Pal</span>
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#certifications">
+                        Certifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+            <div class="menu-btn">
+                ☰
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section id="home">
+
+        <div class="container">
+
+            <div class="hero reveal">
+
+                <div class="hero-small">
+                    Hello, I'm
+                </div>
+
+                <h1>
+                    Vivek<br>
+                    <span>Kumar Pal</span>
+                </h1>
+
+                <p>
+                    A passionate developer and technology enthusiast
+                    interested in building useful software, embedded
+                    systems and innovative projects.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#projects" class="btn primary">
+                        View My Work
+                    </a>
+
+                    <a href="#contact" class="btn">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="scroll-indicator">
+            SCROLL ↓
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+        <div class="container reveal">
+
+            <div class="section-label">
+                01 — About
+            </div>
+
+            <h2 class="section-title">
+                A little about me.
+            </h2>
+
+            <div class="about-grid">
+
+                <div class="about-text">
+
+                    <p>
+                        I'm <strong>Vivek Kumar Pal</strong>, a student and
+                        aspiring developer who enjoys experimenting with
+                        technology and turning ideas into working projects.
+                    </p>
+
+                    <p>
+                        My interests include programming, embedded systems,
+                        networking, IoT, software development and exploring
+                        new technologies.
+                    </p>
+
+                    <p>
+                        I'm always looking for opportunities to learn,
+                        build and improve my technical skills.
+                    </p>
+
+                </div>
+
+
+                <div class="about-box">
+
+                    <h3>Quick Info</h3>
+
+                    <div class="info">
+                        <span>Name</span>
+                        <span>Vivek Kumar Pal</span>
+                    </div>
+
+                    <div class="info">
+                        <span>Location</span>
+                        <span>Your City</span>
+                    </div>
+
+                    <div class="info">
+                        <span>Degree</span>
+                        <span>Your Degree</span>
+                    </div>
+
+                    <div class="info">
+                        <span>University</span>
+                        <span>Your University</span>
+                    </div>
+
+                    <div class="info">
+                        <span>Email</span>
+                        <span>your@email.com</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+        <div class="container reveal">
+
+            <div class="section-label">
+                02 — Skills
+            </div>
+
+            <h2 class="section-title">
+                Technologies I use.
+            </h2>
+
+            <div class="skills-grid">
+
+
+                <div class="skill">
+
+                    <div class="skill-top">
+                        <span>C / C++</span>
+                        <span>85%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div
+                            class="bar-fill"
+                            data-width="85%">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <div class="skill-top">
+                        <span>Python</span>
+                        <span>80%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div
+                            class="bar-fill"
+                            data-width="80%">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <div class="skill-top">
+                        <span>HTML / CSS</span>
+                        <span>90%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div
+                            class="bar-fill"
+                            data-width="90%">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <div class="skill-top">
+                        <span>JavaScript</span>
+                        <span>70%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div
+                            class="bar-fill"
+                            data-width="70%">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <div class="skill-top">
+                        <span>ESP32 / IoT</span>
+                        <span>85%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div
+                            class="bar-fill"
+                            data-width="85%">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <div class="skill-top">
+                        <span>Networking</span>
+                        <span>75%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div
+                            class="bar-fill"
+                            data-width="75%">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects">
+
+        <div class="container reveal">
+
+            <div class="section-label">
+                03 — Projects
+            </div>
+
+            <h2 class="section-title">
+                Things I've built.
+            </h2>
+
+            <div class="projects-grid">
+
+
+                <article class="project">
+
+                    <div class="project-number">
+                        PROJECT / 01
+                    </div>
+
+                    <h3>
+                        Water Quality Monitoring System
+                    </h3>
+
+                    <p>
+                        An ESP32-based system designed to monitor water
+                        quality parameters such as pH, temperature and
+                        TDS. The system provides real-time measurements,
+                        fault detection and calibration support.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">ESP32</span>
+                        <span class="tag">IoT</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">Sensors</span>
+                        <span class="tag">WebSocket</span>
+
+                    </div>
+
+                    <a href="#" class="project-link">
+                        View Project →
+                    </a>
+
+                </article>
+
+
+                <article class="project">
+
+                    <div class="project-number">
+                        PROJECT / 02
+                    </div>
+
+                    <h3>
+                        Offline Mesh Communicator
+                    </h3>
+
+                    <p>
+                        A peer-to-peer communication system designed to
+                        allow devices to discover nearby nodes and exchange
+                        messages without relying on a central internet
+                        connection.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">Python</span>
+                        <span class="tag">Kivy</span>
+                        <span class="tag">UDP</span>
+                        <span class="tag">Networking</span>
+                        <span class="tag">Mesh</span>
+
+                    </div>
+
+                    <a href="#" class="project-link">
+                        View Project →
+                    </a>
+
+                </article>
+
+
+                <article class="project">
+
+                    <div class="project-number">
+                        PROJECT / 03
+                    </div>
+
+                    <h3>
+                        Your Next Project
+                    </h3>
+
+                    <p>
+                        Add another project here. Describe the problem
+                        you solved, the technologies you used and what
+                        you learned while building it.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">Technology</span>
+                        <span class="tag">Technology</span>
+                        <span class="tag">Technology</span>
+
+                    </div>
+
+                    <a href="#" class="project-link">
+                        View Project →
+                    </a>
+
+                </article>
+
+
+                <article class="project">
+
+                    <div class="project-number">
+                        PROJECT / 04
+                    </div>
+
+                    <h3>
+                        Future Project
+                    </h3>
+
+                    <p>
+                        This space can be used for another project,
+                        experiment, research project or achievement.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Coming Soon
+                        </span>
+
+                    </div>
+
+                    <a href="#" class="project-link">
+                        View Project →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CERTIFICATIONS
+    ========================== -->
+
+    <section id="certifications">
+
+        <div class="container reveal">
+
+            <div class="section-label">
+                04 — Certifications
+            </div>
+
+            <h2 class="section-title">
+                Certifications & achievements.
+            </h2>
+
+            <div class="certifications-grid">
+
+
+                <!-- CERTIFICATION 01 -->
+
+                <div class="certification">
+
+                    <div class="cert-icon">
+                        ✓
+                    </div>
+
+                    <div class="cert-content">
+
+                        <div class="cert-date">
+                            2026
+                        </div>
+
+                        <h3>
+                            Certification Name
+                        </h3>
+
+                        <p>
+                            Issued by Certification Provider
+                        </p>
+
+                        <span class="cert-description">
+                            Short description of the certification,
+                            course or achievement.
+                        </span>
+
+                        <a href="#" class="cert-link">
+                            View Certificate →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CERTIFICATION 02 -->
+
+                <div class="certification">
+
+                    <div class="cert-icon">
+                        ✓
+                    </div>
+
+                    <div class="cert-content">
+
+                        <div class="cert-date">
+                            2026
+                        </div>
+
+                        <h3>
+                            Another Certification
+                        </h3>
+
+                        <p>
+                            Issued by Certification Provider
+                        </p>
+
+                        <span class="cert-description">
+                            Add a short description of what you
+                            learned or accomplished.
+                        </span>
+
+                        <a href="#" class="cert-link">
+                            View Certificate →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CERTIFICATION 03 -->
+
+                <div class="certification">
+
+                    <div class="cert-icon">
+                        ✓
+                    </div>
+
+                    <div class="cert-content">
+
+                        <div class="cert-date">
+                            2025
+                        </div>
+
+                        <h3>
+                            Your Certification
+                        </h3>
+
+                        <p>
+                            Issued by Certification Provider
+                        </p>
+
+                        <span class="cert-description">
+                            Replace this with your certification
+                            details.
+                        </span>
+
+                        <a href="#" class="cert-link">
+                            View Certificate →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CERTIFICATION 04 -->
+
+                <div class="certification">
+
+                    <div class="cert-icon">
+                        ★
+                    </div>
+
+                    <div class="cert-content">
+
+                        <div class="cert-date">
+                            2025
+                        </div>
+
+                        <h3>
+                            Achievement / Workshop
+                        </h3>
+
+                        <p>
+                            Organization / Institution
+                        </p>
+
+                        <span class="cert-description">
+                            You can also use this card for workshops,
+                            competitions, hackathons or other achievements.
+                        </span>
+
+                        <a href="#" class="cert-link">
+                            View Details →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section id="education">
+
+        <div class="container reveal">
+
+            <div class="section-label">
+                05 — Education
+            </div>
+
+            <h2 class="section-title">
+                My journey.
+            </h2>
+
+            <div class="timeline">
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-date">
+                        2024 — PRESENT
+                    </div>
+
+                    <h3>
+                        Bachelor's Degree
+                    </h3>
+
+                    <p>
+                        Your Degree — Your University
+                    </p>
+
+                    <p>
+                        Add a short description of your studies,
+                        specialization, achievements or relevant
+                        coursework here.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-date">
+                        2022 — 2024
+                    </div>
+
+                    <h3>
+                        Higher Secondary Education
+                    </h3>
+
+                    <p>
+                        Your School / Institution
+                    </p>
+
+                    <p>
+                        Add relevant achievements, subjects or
+                        extracurricular activities here.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-date">
+                        2020 — 2022
+                    </div>
+
+                    <h3>
+                        Secondary Education
+                    </h3>
+
+                    <p>
+                        Your School
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+        <div class="container reveal">
+
+            <div class="section-label">
+                06 — Contact
+            </div>
+
+            <h2 class="section-title">
+                Let's connect.
+            </h2>
+
+            <div class="contact-container">
+
+                <p>
+                    Interested in working together, discussing a project
+                    or simply connecting? Feel free to reach out through
+                    any of the platforms below.
+                </p>
+
+                <div class="contact-links">
+
+
+                    <a
+                        href="mailto:your@email.com"
+                        class="contact-card">
+
+                        <small>Email</small>
+
+                        <span>
+                            your@email.com
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="contact-card">
+
+                        <small>GitHub</small>
+
+                        <span>
+                            github.com/username
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="contact-card">
+
+                        <small>LinkedIn</small>
+
+                        <span>
+                            linkedin.com/in/username
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        © <span id="year"></span> Your Name.
+
+        Built with HTML, CSS & JavaScript.
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /* =========================
+           MOBILE MENU
+        ========================== */
+
+        const menuBtn =
+            document.querySelector(".menu-btn");
+
+        const navLinks =
+            document.querySelector(".nav-links");
+
+
+        menuBtn.addEventListener("click", () => {
+
+            navLinks.classList.toggle("open");
+
+        });
+
+
+        /* Close menu after clicking */
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    navLinks.classList.remove("open");
+
+                });
+
+            });
+
+
+        /* =========================
+           SCROLL REVEAL
+        ========================== */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        const revealObserver =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target
+                                .classList
+                                .add("show");
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+
+        revealElements.forEach(element => {
+
+            revealObserver.observe(element);
+
+        });
+
+
+        /* =========================
+           SKILL BARS
+        ========================== */
+
+        const skillBars =
+            document.querySelectorAll(".bar-fill");
+
+
+        const skillObserver =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            const width =
+                                entry.target.dataset.width;
+
+                            entry.target.style.width =
+                                width;
+
+                            skillObserver
+                                .unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.5
+                }
+            );
+
+
+        skillBars.forEach(bar => {
+
+            skillObserver.observe(bar);
+
+        });
+
+
+        /* =========================
+           ACTIVE NAVIGATION
+        ========================== */
+
+        const sections =
+            document.querySelectorAll("section");
+
+        const navItems =
+            document.querySelectorAll(".nav-links a");
+
+
+        window.addEventListener("scroll", () => {
+
+            let current = "";
+
+
+            sections.forEach(section => {
+
+                const sectionTop =
+                    section.offsetTop - 150;
+
+
+                if (
+                    window.scrollY >= sectionTop
+                ) {
+
+                    current =
+                        section.getAttribute("id");
+
+                }
+
+            });
+
+
+            navItems.forEach(link => {
+
+                link.classList.remove("active");
+
+
+                if (
+                    link.getAttribute("href")
+                    === "#" + current
+                ) {
+
+                    link.classList.add("active");
+
+                }
+
+            });
+
+        });
+
+
+        /* =========================
+           CURSOR GLOW
+        ========================== */
+
+        const cursorGlow =
+            document.querySelector(".cursor-glow");
+
+
+        document.addEventListener(
+            "mousemove",
+            (event) => {
+
+                cursorGlow.style.left =
+                    event.clientX + "px";
+
+                cursorGlow.style.top =
+                    event.clientY + "px";
+
+            }
+        );
+
+
+        /* =========================
+           CURRENT YEAR
+        ========================== */
+
+        document.getElementById("year")
+            .textContent =
+            new Date().getFullYear();
+
+    </script>
+
+</body>
+</html>
+```
