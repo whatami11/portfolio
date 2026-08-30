@@ -8,6 +8,7 @@
     <title>Vivek Kumar Pal | Portfolio</title>
 
     <style>
+
         /* =========================
            RESET & GLOBAL
         ========================== */
@@ -55,6 +56,7 @@
             inset: 0;
             z-index: -10;
             overflow: hidden;
+
             background:
                 radial-gradient(
                     circle at 20% 20%,
@@ -96,12 +98,18 @@
 
         .orb {
             position: absolute;
+
             width: 350px;
             height: 350px;
+
             border-radius: 50%;
+
             filter: blur(100px);
+
             opacity: 0.15;
-            animation: float 10s infinite ease-in-out;
+
+            animation:
+                float 10s infinite ease-in-out;
         }
 
         .orb.one {
@@ -114,6 +122,7 @@
             background: #8c4dff;
             right: -100px;
             top: 50%;
+
             animation-delay: -4s;
         }
 
@@ -376,7 +385,7 @@
         }
 
         .skill {
-            padding: 25px;
+            padding: 28px;
 
             background:
                 rgba(255,255,255,0.025);
@@ -385,30 +394,27 @@
                 1px solid rgba(255,255,255,0.07);
 
             border-radius: 12px;
+
+            transition: 0.4s;
         }
 
-        .skill-top {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 12px;
+        .skill:hover {
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(0,217,255,0.4);
         }
 
-        .skill-top span:last-child {
-            color: #00d9ff;
+        .skill h3 {
+            color: #f5f7fa;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
         }
 
-        .bar {
-            height: 5px;
-            background: #1a202b;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .bar-fill {
-            width: 0;
-            height: 100%;
-            background: #00d9ff;
-            transition: width 1.5s ease;
+        .skill p {
+            color: #929baa;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
 
 
@@ -625,7 +631,7 @@
 
 
         /* =========================
-           TIMELINE / EDUCATION
+           EDUCATION
         ========================== */
 
         .timeline {
@@ -676,9 +682,25 @@
             margin-bottom: 8px;
         }
 
+        .timeline-item .institution {
+            color: #f5f7fa;
+
+            font-size: 1rem;
+
+            margin-bottom: 8px;
+        }
+
         .timeline-item p {
             color: #929baa;
+
             line-height: 1.7;
+
+            margin-bottom: 5px;
+        }
+
+        .grade {
+            color: #00d9ff !important;
+            font-weight: 600;
         }
 
 
@@ -700,7 +722,10 @@
 
         .contact-links {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 15px;
         }
 
@@ -911,7 +936,7 @@
         <nav>
 
             <a href="#home" class="logo">
-                Vivek<span> Kumar Pal</span>
+                VIVEK<span>KP</span>
             </a>
 
             <ul class="nav-links">
@@ -939,11 +964,15 @@
                 </li>
 
                 <li>
-                    <a href="#education">Education</a>
+                    <a href="#education">
+                        Education
+                    </a>
                 </li>
 
                 <li>
-                    <a href="#contact">Contact</a>
+                    <a href="#contact">
+                        Contact
+                    </a>
                 </li>
 
             </ul>
@@ -973,7 +1002,7 @@
 
                 <h1>
                     Vivek<br>
-                    <span>Kumar Pal</span>
+                    <span>Kumar Pal.</span>
                 </h1>
 
                 <p>
@@ -984,12 +1013,20 @@
 
                 <div class="buttons">
 
-                    <a href="#projects" class="btn primary">
+                    <a
+                        href="#projects"
+                        class="btn primary">
+
                         View My Work
+
                     </a>
 
-                    <a href="#contact" class="btn">
+                    <a
+                        href="#contact"
+                        class="btn">
+
                         Contact Me
+
                     </a>
 
                 </div>
@@ -1026,15 +1063,16 @@
                 <div class="about-text">
 
                     <p>
-                        I'm <strong>Vivek Kumar Pal</strong>, a student and
-                        aspiring developer who enjoys experimenting with
-                        technology and turning ideas into working projects.
+                        I'm <strong>Vivek Kumar Pal</strong>, a B.Tech
+                        student and aspiring developer who enjoys
+                        experimenting with technology and turning
+                        ideas into working projects.
                     </p>
 
                     <p>
-                        My interests include programming, embedded systems,
-                        networking, IoT, software development and exploring
-                        new technologies.
+                        My interests include programming, embedded
+                        systems, networking, IoT, software development
+                        and exploring new technologies.
                     </p>
 
                     <p>
@@ -1047,7 +1085,9 @@
 
                 <div class="about-box">
 
-                    <h3>Quick Info</h3>
+                    <h3>
+                        Quick Info
+                    </h3>
 
                     <div class="info">
                         <span>Name</span>
@@ -1056,22 +1096,22 @@
 
                     <div class="info">
                         <span>Location</span>
-                        <span>Your City</span>
+                        <span>Phagwara</span>
                     </div>
 
                     <div class="info">
                         <span>Degree</span>
-                        <span>Your Degree</span>
+                        <span>B.Tech</span>
                     </div>
 
                     <div class="info">
                         <span>University</span>
-                        <span>Your University</span>
+                        <span>Lovely Professional University</span>
                     </div>
 
                     <div class="info">
-                        <span>Email</span>
-                        <span>your@email.com</span>
+                        <span>CGPA</span>
+                        <span>9.44</span>
                     </div>
 
                 </div>
@@ -1104,102 +1144,84 @@
 
                 <div class="skill">
 
-                    <div class="skill-top">
-                        <span>C / C++</span>
-                        <span>85%</span>
-                    </div>
+                    <h3>
+                        C / C++
+                    </h3>
 
-                    <div class="bar">
-                        <div
-                            class="bar-fill"
-                            data-width="85%">
-                        </div>
-                    </div>
+                    <p>
+                        Programming, problem solving and
+                        embedded development.
+                    </p>
 
                 </div>
 
 
                 <div class="skill">
 
-                    <div class="skill-top">
-                        <span>Python</span>
-                        <span>80%</span>
-                    </div>
+                    <h3>
+                        Python
+                    </h3>
 
-                    <div class="bar">
-                        <div
-                            class="bar-fill"
-                            data-width="80%">
-                        </div>
-                    </div>
+                    <p>
+                        Application development, networking
+                        and automation.
+                    </p>
 
                 </div>
 
 
                 <div class="skill">
 
-                    <div class="skill-top">
-                        <span>HTML / CSS</span>
-                        <span>90%</span>
-                    </div>
+                    <h3>
+                        HTML / CSS
+                    </h3>
 
-                    <div class="bar">
-                        <div
-                            class="bar-fill"
-                            data-width="90%">
-                        </div>
-                    </div>
+                    <p>
+                        Responsive websites and
+                        interactive interfaces.
+                    </p>
 
                 </div>
 
 
                 <div class="skill">
 
-                    <div class="skill-top">
-                        <span>JavaScript</span>
-                        <span>70%</span>
-                    </div>
+                    <h3>
+                        JavaScript
+                    </h3>
 
-                    <div class="bar">
-                        <div
-                            class="bar-fill"
-                            data-width="70%">
-                        </div>
-                    </div>
+                    <p>
+                        Interactive web experiences and
+                        frontend functionality.
+                    </p>
 
                 </div>
 
 
                 <div class="skill">
 
-                    <div class="skill-top">
-                        <span>ESP32 / IoT</span>
-                        <span>85%</span>
-                    </div>
+                    <h3>
+                        ESP32 / IoT
+                    </h3>
 
-                    <div class="bar">
-                        <div
-                            class="bar-fill"
-                            data-width="85%">
-                        </div>
-                    </div>
+                    <p>
+                        Sensors, microcontrollers, IoT
+                        systems and data monitoring.
+                    </p>
 
                 </div>
 
 
                 <div class="skill">
 
-                    <div class="skill-top">
-                        <span>Networking</span>
-                        <span>75%</span>
-                    </div>
+                    <h3>
+                        Networking
+                    </h3>
 
-                    <div class="bar">
-                        <div
-                            class="bar-fill"
-                            data-width="75%">
-                        </div>
-                    </div>
+                    <p>
+                        UDP communication, peer-to-peer
+                        systems and mesh networking.
+                    </p>
 
                 </div>
 
@@ -1229,6 +1251,8 @@
             <div class="projects-grid">
 
 
+                <!-- PROJECT 01 -->
+
                 <article class="project">
 
                     <div class="project-number">
@@ -1240,28 +1264,49 @@
                     </h3>
 
                     <p>
-                        An ESP32-based system designed to monitor water
-                        quality parameters such as pH, temperature and
-                        TDS. The system provides real-time measurements,
-                        fault detection and calibration support.
+                        An ESP32-based system designed to monitor
+                        water quality parameters such as pH,
+                        temperature and TDS. The system provides
+                        real-time measurements, fault detection
+                        and calibration support.
                     </p>
 
                     <div class="tags">
 
-                        <span class="tag">ESP32</span>
-                        <span class="tag">IoT</span>
-                        <span class="tag">C++</span>
-                        <span class="tag">Sensors</span>
-                        <span class="tag">WebSocket</span>
+                        <span class="tag">
+                            ESP32
+                        </span>
+
+                        <span class="tag">
+                            IoT
+                        </span>
+
+                        <span class="tag">
+                            C++
+                        </span>
+
+                        <span class="tag">
+                            Sensors
+                        </span>
+
+                        <span class="tag">
+                            WebSocket
+                        </span>
 
                     </div>
 
-                    <a href="#" class="project-link">
+                    <a
+                        href="#"
+                        class="project-link">
+
                         View Project →
+
                     </a>
 
                 </article>
 
+
+                <!-- PROJECT 02 -->
 
                 <article class="project">
 
@@ -1274,85 +1319,42 @@
                     </h3>
 
                     <p>
-                        A peer-to-peer communication system designed to
-                        allow devices to discover nearby nodes and exchange
-                        messages without relying on a central internet
-                        connection.
-                    </p>
-
-                    <div class="tags">
-
-                        <span class="tag">Python</span>
-                        <span class="tag">Kivy</span>
-                        <span class="tag">UDP</span>
-                        <span class="tag">Networking</span>
-                        <span class="tag">Mesh</span>
-
-                    </div>
-
-                    <a href="#" class="project-link">
-                        View Project →
-                    </a>
-
-                </article>
-
-
-                <article class="project">
-
-                    <div class="project-number">
-                        PROJECT / 03
-                    </div>
-
-                    <h3>
-                        Your Next Project
-                    </h3>
-
-                    <p>
-                        Add another project here. Describe the problem
-                        you solved, the technologies you used and what
-                        you learned while building it.
-                    </p>
-
-                    <div class="tags">
-
-                        <span class="tag">Technology</span>
-                        <span class="tag">Technology</span>
-                        <span class="tag">Technology</span>
-
-                    </div>
-
-                    <a href="#" class="project-link">
-                        View Project →
-                    </a>
-
-                </article>
-
-
-                <article class="project">
-
-                    <div class="project-number">
-                        PROJECT / 04
-                    </div>
-
-                    <h3>
-                        Future Project
-                    </h3>
-
-                    <p>
-                        This space can be used for another project,
-                        experiment, research project or achievement.
+                        A peer-to-peer communication system designed
+                        to allow devices to discover nearby nodes and
+                        exchange messages without relying on a central
+                        internet connection.
                     </p>
 
                     <div class="tags">
 
                         <span class="tag">
-                            Coming Soon
+                            Python
+                        </span>
+
+                        <span class="tag">
+                            Kivy
+                        </span>
+
+                        <span class="tag">
+                            UDP
+                        </span>
+
+                        <span class="tag">
+                            Networking
+                        </span>
+
+                        <span class="tag">
+                            Mesh
                         </span>
 
                     </div>
 
-                    <a href="#" class="project-link">
+                    <a
+                        href="#"
+                        class="project-link">
+
                         View Project →
+
                     </a>
 
                 </article>
@@ -1383,7 +1385,7 @@
             <div class="certifications-grid">
 
 
-                <!-- CERTIFICATION 01 -->
+                <!-- PYTHON ESSENTIALS -->
 
                 <div class="certification">
 
@@ -1394,24 +1396,28 @@
                     <div class="cert-content">
 
                         <div class="cert-date">
-                            2026
+                            CERTIFICATION
                         </div>
 
                         <h3>
-                            Certification Name
+                            Python Essentials
                         </h3>
 
                         <p>
-                            Issued by Certification Provider
+                            Cisco Networking Academy
                         </p>
 
                         <span class="cert-description">
-                            Short description of the certification,
-                            course or achievement.
+                            Certification in Python fundamentals
+                            and programming concepts.
                         </span>
 
-                        <a href="#" class="cert-link">
+                        <a
+                            href="#"
+                            class="cert-link">
+
                             View Certificate →
+
                         </a>
 
                     </div>
@@ -1419,7 +1425,7 @@
                 </div>
 
 
-                <!-- CERTIFICATION 02 -->
+                <!-- EFFECTIVE TIME MANAGEMENT -->
 
                 <div class="certification">
 
@@ -1430,96 +1436,29 @@
                     <div class="cert-content">
 
                         <div class="cert-date">
-                            2026
+                            CERTIFICATION
                         </div>
 
                         <h3>
-                            Another Certification
+                            Effective Time Management
                         </h3>
 
                         <p>
-                            Issued by Certification Provider
+                            Tech Veda
                         </p>
 
                         <span class="cert-description">
-                            Add a short description of what you
-                            learned or accomplished.
+                            Certification focused on effective
+                            time management, organization and
+                            productivity.
                         </span>
 
-                        <a href="#" class="cert-link">
+                        <a
+                            href="#"
+                            class="cert-link">
+
                             View Certificate →
-                        </a>
 
-                    </div>
-
-                </div>
-
-
-                <!-- CERTIFICATION 03 -->
-
-                <div class="certification">
-
-                    <div class="cert-icon">
-                        ✓
-                    </div>
-
-                    <div class="cert-content">
-
-                        <div class="cert-date">
-                            2025
-                        </div>
-
-                        <h3>
-                            Your Certification
-                        </h3>
-
-                        <p>
-                            Issued by Certification Provider
-                        </p>
-
-                        <span class="cert-description">
-                            Replace this with your certification
-                            details.
-                        </span>
-
-                        <a href="#" class="cert-link">
-                            View Certificate →
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- CERTIFICATION 04 -->
-
-                <div class="certification">
-
-                    <div class="cert-icon">
-                        ★
-                    </div>
-
-                    <div class="cert-content">
-
-                        <div class="cert-date">
-                            2025
-                        </div>
-
-                        <h3>
-                            Achievement / Workshop
-                        </h3>
-
-                        <p>
-                            Organization / Institution
-                        </p>
-
-                        <span class="cert-description">
-                            You can also use this card for workshops,
-                            competitions, hackathons or other achievements.
-                        </span>
-
-                        <a href="#" class="cert-link">
-                            View Details →
                         </a>
 
                     </div>
@@ -1552,63 +1491,74 @@
             <div class="timeline">
 
 
+                <!-- BACHELORS -->
+
                 <div class="timeline-item">
 
                     <div class="timeline-date">
-                        2024 — PRESENT
+                        2025 — PRESENT
                     </div>
 
                     <h3>
-                        Bachelor's Degree
+                        B.Tech
                     </h3>
 
-                    <p>
-                        Your Degree — Your University
+                    <p class="institution">
+                        Lovely Professional University
                     </p>
 
                     <p>
-                        Add a short description of your studies,
-                        specialization, achievements or relevant
-                        coursework here.
+                        Bachelor's degree in technology.
+                    </p>
+
+                    <p class="grade">
+                        Current CGPA: 9.44
                     </p>
 
                 </div>
 
 
+                <!-- HIGHER SECONDARY -->
+
                 <div class="timeline-item">
 
                     <div class="timeline-date">
-                        2022 — 2024
+                        2023 — 2024
                     </div>
 
                     <h3>
                         Higher Secondary Education
                     </h3>
 
-                    <p>
-                        Your School / Institution
+                    <p class="institution">
+                        Kendriya Vidyalaya BHU
                     </p>
 
-                    <p>
-                        Add relevant achievements, subjects or
-                        extracurricular activities here.
+                    <p class="grade">
+                        Percentage: 90.2%
                     </p>
 
                 </div>
 
 
+                <!-- SECONDARY -->
+
                 <div class="timeline-item">
 
                     <div class="timeline-date">
-                        2020 — 2022
+                        2021 — 2022
                     </div>
 
                     <h3>
                         Secondary Education
                     </h3>
 
-                    <p>
-                        Your School
+                    <p class="institution">
+                        Kendriya Vidyalaya BHU
+                    </p>
+
+                    <p class="grade">
+                        Percentage: 89%
                     </p>
 
                 </div>
@@ -1639,9 +1589,9 @@
             <div class="contact-container">
 
                 <p>
-                    Interested in working together, discussing a project
-                    or simply connecting? Feel free to reach out through
-                    any of the platforms below.
+                    Interested in working together, discussing
+                    a project or simply connecting? Feel free to
+                    reach out through any of the platforms below.
                 </p>
 
                 <div class="contact-links">
@@ -1651,10 +1601,12 @@
                         href="mailto:your@email.com"
                         class="contact-card">
 
-                        <small>Email</small>
+                        <small>
+                            Email
+                        </small>
 
                         <span>
-                            your@email.com
+                            vivek@gmail.com
                         </span>
 
                     </a>
@@ -1664,10 +1616,12 @@
                         href="#"
                         class="contact-card">
 
-                        <small>GitHub</small>
+                        <small>
+                            GitHub
+                        </small>
 
                         <span>
-                            github.com/username
+                            github.com/whatami11
                         </span>
 
                     </a>
@@ -1677,10 +1631,12 @@
                         href="#"
                         class="contact-card">
 
-                        <small>LinkedIn</small>
+                        <small>
+                            LinkedIn
+                        </small>
 
                         <span>
-                            linkedin.com/in/username
+                            linkedin.com/in/vivekkumarpal
                         </span>
 
                     </a>
@@ -1700,7 +1656,8 @@
 
     <footer>
 
-        © <span id="year"></span> Your Name.
+        © <span id="year"></span>
+        Vivek Kumar Pal.
 
         Built with HTML, CSS & JavaScript.
 
@@ -1785,49 +1742,6 @@
 
 
         /* =========================
-           SKILL BARS
-        ========================== */
-
-        const skillBars =
-            document.querySelectorAll(".bar-fill");
-
-
-        const skillObserver =
-            new IntersectionObserver(
-                (entries) => {
-
-                    entries.forEach(entry => {
-
-                        if (entry.isIntersecting) {
-
-                            const width =
-                                entry.target.dataset.width;
-
-                            entry.target.style.width =
-                                width;
-
-                            skillObserver
-                                .unobserve(entry.target);
-
-                        }
-
-                    });
-
-                },
-                {
-                    threshold: 0.5
-                }
-            );
-
-
-        skillBars.forEach(bar => {
-
-            skillObserver.observe(bar);
-
-        });
-
-
-        /* =========================
            ACTIVE NAVIGATION
         ========================== */
 
@@ -1835,7 +1749,9 @@
             document.querySelectorAll("section");
 
         const navItems =
-            document.querySelectorAll(".nav-links a");
+            document.querySelectorAll(
+                ".nav-links a"
+            );
 
 
         window.addEventListener("scroll", () => {
@@ -1885,7 +1801,9 @@
         ========================== */
 
         const cursorGlow =
-            document.querySelector(".cursor-glow");
+            document.querySelector(
+                ".cursor-glow"
+            );
 
 
         document.addEventListener(
